@@ -57,3 +57,41 @@ data: {
   <h1>{{name}}</h1>
 </div>
 ```
+
+# Data & Methods
+
+- We could add methods in Vue js instance Object.
+- To add method in vue js object, we will use "methods" keyword which is going to take value as a object.
+
+```js
+methods: {
+}
+```
+
+- under this method object we can describe our function.
+
+```js
+methods : {
+    greet : function(){
+        return 'Hello'
+    }
+}
+```
+
+- We can use this method in HTML by using {{}} and funtion name.
+
+```html
+<h1>{{greet()}}</h1>
+```
+
+- We can access data property in this function by using this keyword-
+
+```js
+method:{
+    greet : function(){
+        return `Hii ${this.name}`
+    }
+}
+```
+
+- where this keyword refers to the vue instance object and in this we can directly access data property 'name', because vue js take all the diff properties of data object and proxies them on the top.
