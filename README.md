@@ -68,7 +68,7 @@ methods: {
 }
 ```
 
-- under this method object we can describe our function.
+- under this method object we can define our function.
 
 ```js
 methods : {
