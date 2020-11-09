@@ -37,7 +37,7 @@ new Vue({});
 - In Vue js object, their are some properties -
 
 ```js
-el: "root";
+el: "vue-app";
 ```
 
 - this el keyword is a reserved keyword in vue js and it's value going to be a string, and it says which element on the page this gonna be control.
