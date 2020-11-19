@@ -78,7 +78,7 @@ methods : {
 }
 ```
 
-- We can use this method in HTML by using {{}} and funtion name.
+- We can use this method in HTML by using {{}} and function name.
 
 ```html
 <h1>{{greet()}}</h1>
@@ -95,3 +95,52 @@ method:{
 ```
 
 - where this keyword refers to the vue instance object and in this we can directly access data property 'name', because vue js take all the diff properties of data object and proxies them on the top.
+
+# Data Binding
+
+- Binding data/dynamic data to any kind of attributes like href,values, etc.
+
+- to binibding data we use 'Directive call' 'v-bind:'
+
+```js
+new Vue({
+  website-url : 'www.google.com'
+})
+```
+
+```html
+<a v-bind:href="website-url">Click Here</a>
+```
+
+# Events
+
+- For event binding we use 'v-on:eventName'
+
+```html
+v-on:click = 'function()'
+```
+
+# Keyboard Events
+
+- For keyboard events we use 'v-on:keyboardEvent'
+
+```js
+v-on:keyup = 'function()'
+```
+
+# Two way data binding
+
+- if we want to update any value in vue instanse, by the value of input field we will use,
+  'v-model ="variable name in vue instanse"
+
+```js
+new vue({
+  data: {
+    name: "",
+  },
+});
+```
+
+```html
+<input type="text v-model = 'name'/>
+```
