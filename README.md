@@ -198,3 +198,29 @@ data: {
 ```html
 <div v-bind:class="compClass"></div>
 ```
+
+# Conditions -
+
+## v-if & v-show
+
+- v-if is used when we want to use any consition-
+
+* if v-if condition get true then it will render content, and show in DOM.
+* if v-if condition get false then it will not render content, and not show in DOM.
+
+```html
+<p v-if="sucess">Do Something</p>
+
+<p v-else-if="sucess">Do Something</p>
+```
+
+## v-show
+
+-v-show is simmilar to v-if
+
+- if v-show condition get true then it will render content, and show in DOM.
+- if v-show condition get false then it will not render content, but show in DOM and one class is added which is display:none; .
+
+```html
+<p v-show="sucess">Do Something</p>
+```

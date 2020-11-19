@@ -10,7 +10,9 @@ new Vue({
         a : 0,
         b : 0,
         avilable : false,
-        toggle : false
+        toggle : false,
+        success : false,
+        error : false
     },
     methods : {
         greet : function(time){
