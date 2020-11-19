@@ -8,7 +8,9 @@ new Vue({
         y:0,
         age : 20,
         a : 0,
-        b : 0
+        b : 0,
+        avilable : false,
+        toggle : false
     },
     methods : {
         greet : function(time){
@@ -48,6 +50,12 @@ new Vue({
         addToB : function(){
             console.log('Add to B')
             return this.age + this.b
+        },
+        compClass : function(){
+            return {
+                avilable : this.avilable,
+                toggle : this.toggle
+            }
         }
     }
 });

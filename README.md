@@ -144,3 +144,57 @@ new vue({
 ```html
 <input type="text v-model = 'name'/>
 ```
+
+# Computed Property
+
+- Same as method.
+- It will moer efficient than method because it will run that code which needs to run.
+
+```html
+<p>{{functionName}}</p>
+```
+
+# Dynamic CSS Data
+
+- To add css in vue js we use -
+
+```html
+v-bind:class = {'classname'}
+```
+
+- in this class will take as an object.
+
+# step-by-step -
+
+- create class, ex-className
+
+```css
+.className {
+  color: "red";
+}
+```
+
+- in Vue-Js add that class
+
+```js
+data: {
+  className: true;
+}
+```
+
+- create computed property -
+
+```js
+  compClass : function(){
+            return {
+                avilable : this.avilable,
+                toggle : this.toggle
+            }
+        }
+```
+
+- now add this compClass to html file -
+
+```html
+<div v-bind:class="compClass"></div>
+```

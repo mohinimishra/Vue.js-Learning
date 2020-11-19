@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-js</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id ="root">
+        <h1>Dynamic Css</h1>
+        <p>Example-1</p>
+        <div v-on:click="avilable = !avilable" v-bind:class="{avilable:avilable}">
+            <span>Click</span>
+        </div>
+        <button v-on:click="avilable =!avilable" v-bind:class="{avilable:avilable}">Click me</button><br>
+
+        <h1>Example-2</h1>
+        <button v-on:click = "avilable = !avilable">Avialbale</button>
+        <button v-on:click = "toggle = !toggle">Toggle</button>
+
+        <div v-bind:class="compClass">
+            <span>Change color</span>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
