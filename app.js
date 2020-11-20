@@ -1,5 +1,6 @@
 new Vue({
     el : "#root",
+    el : "#game",
     data : {
         name : "",
         link : "https://mohinimishra.github.io/",
@@ -13,7 +14,9 @@ new Vue({
         toggle : false,
         array : ['Joe','Jack','Joo'],
         obj : {name : 'Joe', age : 24},
-        arrObj :[{name : 'Joe', age : 24},{name : 'Jack', age : 23},{name : 'Joo', age : 19}]
+        arrObj :[{name : 'Joe', age : 24},{name : 'Jack', age : 23},{name : 'Joo', age : 19}],
+        health : 100,
+        ended : false
     },
     methods : {
         greet : function(time){
@@ -44,6 +47,16 @@ new Vue({
         //     console.log('Add to B')
         //     return this.age + this.b
         // }
+        punch : function(){
+            this.health -= 10
+            if(this.health<=0){
+                this.ended = true
+            }
+        },
+        restart : function(){
+            this.health = 100
+            this.ended = false
+        }
     },
     computed: {
         addToA : function(){
