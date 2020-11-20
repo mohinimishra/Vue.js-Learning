@@ -224,3 +224,37 @@ data: {
 ```html
 <p v-show="sucess">Do Something</p>
 ```
+
+# Looping with v-for
+
+- To Loop Array -
+
+```html
+<li v-for="(ele) in array">{{ele}}</li>
+```
+
+- TO loop array without li tag -
+
+```html
+<template v-for="(ele) in array">
+  <h3>{{ele}}</h3>
+</template>
+```
+
+- Using template instead of div, it will not create template tag agian and agian in DOM.
+
+# To loop Objects -
+
+```html
+<li v-for="(val,key) in obj">{{key}}-{{val}}</li>
+```
+
+# To loop array of Object
+
+```html
+<div v-for="(ele) in array">
+  <div v-for="(val,key) in ele">
+    <h3>{{key}}-{{val}}</h3>
+  </div>
+</div>
+```

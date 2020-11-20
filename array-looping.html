@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-js</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id = "root">
+        <h2>Array Loop</h2>
+        <ul>
+            <li v-for ="(ele,ind) in array">{{ind}}-{{ele}}</li>
+        </ul>
+        <h2>Object Loop</h2>
+        <ul>
+            <li v-for ="(val,key) in obj">{{key}}-{{val}}</li>
+        </ul>
+        <h3>Array Object</h3>
+        <template v-for="(ele) in arrObj">
+            <div v-for="(val,key) in ele">{{key}}-{{val}}</div>
+        </template>
+    </div>
+    <script src="./app.js"></script>
+</body>
+    
+</html>

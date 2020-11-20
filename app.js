@@ -11,8 +11,9 @@ new Vue({
         b : 0,
         avilable : false,
         toggle : false,
-        success : false,
-        error : false
+        array : ['Joe','Jack','Joo'],
+        obj : {name : 'Joe', age : 24},
+        arrObj :[{name : 'Joe', age : 24},{name : 'Jack', age : 23},{name : 'Joo', age : 19}]
     },
     methods : {
         greet : function(time){
