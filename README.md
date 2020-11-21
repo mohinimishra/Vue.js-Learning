@@ -258,3 +258,44 @@ data: {
   </div>
 </div>
 ```
+
+# Multiple Vue Instance
+
+- to create multiple instance -
+
+```js
+new Vue({
+  ele: "root",
+  data: {},
+});
+
+new Vue({
+  ele: "root2",
+  data: {},
+});
+```
+
+# Components in Vue
+
+- Use component in vue like Vue.component('componentName',{})
+
+* the first parameter is component name and second parameter is an object.
+
+```js
+Vue.component("greeting", {
+  template: <p>Hello</p>,
+  data: function () {
+    return {
+      name: "ABC",
+    };
+  },
+});
+```
+
+- in this component data is function not object and its return object.
+
+* To use this component in html page we will use component name as a tag
+
+```html
+<greeting></greeting>
+```

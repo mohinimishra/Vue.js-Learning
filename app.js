@@ -75,4 +75,22 @@ new Vue({
         }
     }
 });
-// console.log(new Vue())
+
+// Component
+Vue.component('greeting',{
+    template : '<p>Hello I am {{name}} <button v-on:click="changeName">Click ME</button></p> ',
+    data : function(){
+        return{
+            name : 'MM'
+        }
+    },
+    methods : {
+        changeName : function(){
+            this.name = "Mohini"
+        }
+    }
+})
+
+new Vue({
+    el : "#component"
+})
