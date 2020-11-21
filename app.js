@@ -94,3 +94,18 @@ Vue.component('greeting',{
 new Vue({
     el : "#component"
 })
+
+// refs
+
+new Vue({
+    el: '.refs',
+    data :{
+        input : ""
+    },
+    methods :{
+        inputRefs : function(){
+            this.input = this.$refs.input.value
+        }
+    }
+})
+
