@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import {bus} from '../main'
+
 export default {
     props : {
         title : {
@@ -18,8 +20,10 @@ export default {
     },
     methods : {
         changeTitle : function(){
-            this.$emit('changeTitleName', 'Coding Lang & Their FrameWorks')
+            // this.$emit('changeTitleName', 'Coding Lang & Their FrameWorks')
             // this.title = "Coding Lang & Their FrameWorks"
+            this.title = "Coding Lang and Frameworks"
+            bus.$emit('titleChanged', 'Coding Lang and Framework')
         }
     }
     
