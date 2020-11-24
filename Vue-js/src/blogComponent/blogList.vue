@@ -1,16 +1,16 @@
 <template>
     <div id="show-blog" v-theme:column="'narrow'">
-        <h1>This is Details of Blogs</h1>
+        <h1>List of Blogs</h1>
         <input type="text" placeholder="serch blog" v-model="search">
         <div v-for="blog in filterBlog" class="single-blog">
             <h2 v-rainbow>{{blog.title |toUpperCase}} </h2>
-            <p>{{blog.body | snippet}}</p>
         </div>
     </div>
 </template>
 
 <script>
 import serachMixin from '../mixins/misxins'
+
 export default {
     data(){
         return{
@@ -28,7 +28,7 @@ export default {
         })
     },
     computed: {
-        
+       
     },
     directives : {
         'rainbow' : {
@@ -43,6 +43,7 @@ export default {
         }
     },
     mixins :[serachMixin]
+
 }
 </script>
 

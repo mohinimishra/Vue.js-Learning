@@ -28,9 +28,11 @@
       </div>
   -->
   <div>
-     <blog></blog>
+     <!-- <blog></blog>
+     <bloglist></bloglist>
     <showblog></showblog>
-  <component :is="comp"></component>
+  <component :is="comp"></component> -->
+  <router-view></router-view>
   </div>
 </template>
 
@@ -46,6 +48,8 @@
 
 import Blog from './blogComponent/blog.vue'
 import showBlog from './blogComponent/showBlog.vue'
+import blogList from './blogComponent/blogList.vue'
+
 
 export default {
   components : {
@@ -57,7 +61,8 @@ export default {
     // 'dynamicComp2': DynamicComp2
     // 'blog': Blog
     'showblog':showBlog,
-    'comp' : ''
+    'comp' : '',
+    'bloglist' : blogList
   },
   data() {
     return {
