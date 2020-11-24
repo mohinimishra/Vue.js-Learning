@@ -36,7 +36,6 @@
             </ul>
             <p>Fav Coding Language : {{blog.codingLang}}</p>
         </div>
-        <button v-on:click="showBlog">Show Blog</button>
     </div>
 </template>
 
@@ -45,8 +44,8 @@ export default {
     data(){
         return{
             blog:{
-                title : " ",
-                content :" ",
+                title : "",
+                content :"",
                 categories : [],
                 codingLang : ''
             },
@@ -56,11 +55,7 @@ export default {
     },
     methods : {
         postData: function(){
-            this.$http.post('https://jsonplaceholder.typicode.com/todos/1/posts',{
-                title : this.blog.title,
-                body : this.blog.content,
-                userId :1
-            }).then((data)=>{
+            this.$http.post('https://vuejs-ce8a7.firebaseio.com/posts.json',this.blog).then((data)=>{
                 console.log(data)
                 this.submitted = true
             })

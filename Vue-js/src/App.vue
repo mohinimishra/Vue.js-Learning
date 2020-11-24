@@ -32,7 +32,9 @@
      <bloglist></bloglist>
     <showblog></showblog>
   <component :is="comp"></component> -->
+  <navBar></navBar>
   <router-view></router-view>
+  
   </div>
 </template>
 
@@ -49,6 +51,7 @@
 import Blog from './blogComponent/blog.vue'
 import showBlog from './blogComponent/showBlog.vue'
 import blogList from './blogComponent/blogList.vue'
+import Nav from './blogComponent/header'
 
 
 export default {
@@ -59,10 +62,11 @@ export default {
     // 'app-form' : Form
     // 'dynamicComp': DynamicComp,
     // 'dynamicComp2': DynamicComp2
-    // 'blog': Blog
+    'blog': Blog,
     'showblog':showBlog,
     'comp' : '',
-    'bloglist' : blogList
+    'bloglist' : blogList,
+    'navBar': Nav
   },
   data() {
     return {

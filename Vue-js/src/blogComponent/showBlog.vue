@@ -3,8 +3,8 @@
         <h1>This is Details of Blogs</h1>
         <input type="text" placeholder="serch blog" v-model="search">
         <div v-for="blog in filterBlog" class="single-blog">
-            <h2 v-rainbow>{{blog.title |toUpperCase}} </h2>
-            <p>{{blog.body | snippet}}</p>
+            <router-link v-bind:to="'/blog/'+ blog.id"><h2>{{blog.title |toUpperCase}} </h2></router-link>
+            <p>{{blog.content | snippet}}</p>
         </div>
     </div>
 </template>
@@ -22,9 +22,15 @@ export default {
 
     },
     created(){
-        this.$http.get('https://jsonplaceholder.typicode.com/todos/1/posts').then((data)=>{
-            console.log(data)
-            this.blogs = data.body.slice(0,10)
+        this.$http.get('https://vuejs-ce8a7.firebaseio.com/posts.json').then((data)=>{
+            return data.json()
+        }).then((data)=>{
+            let blogArray=[];
+            for(let key in data){
+                data[key].id = key
+                blogArray.push(data[key])
+            }
+            this.blogs = blogArray
         })
     },
     computed: {
