@@ -15,13 +15,23 @@
           </div>
         </app-form>
       </div>
-      -->
+      
       <div>
         <component v-bind:is ="components"></component>
         <button v-on:click="components = 'dynamicComp'">Show Form 1</button>
         <button v-on:click="components = 'dynamicComp2'">Show Form 2</button>
 
       </div>
+      
+      <div>
+        <blog></blog>
+      </div>
+  -->
+  <div>
+     <blog></blog>
+    <showblog></showblog>
+  <component :is="comp"></component>
+  </div>
 </template>
 
 <script>
@@ -30,9 +40,12 @@
 // import Artical from './Components/artical.vue'
 // import Form from './Components/form.vue'
 
-import DynamicComp from './Components/dynamicComp.vue'
-import DynamicComp2 from './Components/dynamicComp2.vue'
+// import DynamicComp from './Components/dynamicComp.vue'
+// import DynamicComp2 from './Components/dynamicComp2.vue'
+// import Blog from './Components/InputBinding-blog'
 
+import Blog from './blogComponent/blog.vue'
+import showBlog from './blogComponent/showBlog.vue'
 
 export default {
   components : {
@@ -40,20 +53,22 @@ export default {
     // 'app-footer' : Footer,
     // 'app-artical': Artical 
     // 'app-form' : Form
-    'dynamicComp': DynamicComp,
-    'dynamicComp2': DynamicComp2
-
-    
+    // 'dynamicComp': DynamicComp,
+    // 'dynamicComp2': DynamicComp2
+    // 'blog': Blog
+    'showblog':showBlog,
+    'comp' : ''
   },
   data() {
     return {
-      coding : [
-                {name : "Javascript", framework : "Vue.js", show:false},
-                {name : "C", framework : ".net", show:false},
-                {name : "HTML/CSS", framework : "Bootstrap", show:false}
-            ],
-      title : 'Coding Language' ,
-      components : 'dynamicComp'
+      // coding : [
+      //           {name : "Javascript", framework : "Vue.js", show:false},
+      //           {name : "C", framework : ".net", show:false},
+      //           {name : "HTML/CSS", framework : "Bootstrap", show:false}
+      //       ],
+      // title : 'Coding Language' ,
+      // components : 'dynamicComp'
+      
     }
   },
   methods : {
