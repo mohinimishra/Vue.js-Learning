@@ -11,15 +11,46 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/meetups',
+    name: 'meetups',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/MeetUps/meetup.vue')
+  },
+  {
+    path: '/meetup/new',
+    name: 'create',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/MeetUps/CreateMeetup.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Users/profile.vue')
+  },
+  {
+    path: '/signin',
+    name: 'signin',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Users/signIn.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Users/signup.vue')
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
