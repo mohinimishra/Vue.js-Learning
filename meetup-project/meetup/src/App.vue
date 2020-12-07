@@ -1,23 +1,18 @@
   <template>
   <v-app>
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-list
-        v-for="item in menuItems"
-        :key="item.title"
-        router
-        :to="item.link"
-      >
-        <v-list-tile>
-          <v-list-tile-action>
+      <v-list v-for="item in menuItems" :key="item.title" :to="item.link">
+        <v-list-item>
+          <v-list-item-action>
             <v-btn text>
               <v-icon left>{{ item.icon }}</v-icon>
               {{ item.title }}
             </v-btn>
-          </v-list-tile-action>
-        </v-list-tile>
+          </v-list-item-action>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar app class="indigo lighten-4">
+    <v-app-bar app class="blue lighten-5">
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
         class="hidden-sm-and-up"
@@ -29,13 +24,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn
-          text
-          v-for="item in menuItems"
-          :key="item.title"
-          router
-          :to="item.link"
-        >
+        <v-btn text v-for="item in menuItems" :key="item.title" :to="item.link">
           <v-icon left>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>

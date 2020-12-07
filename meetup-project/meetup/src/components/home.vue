@@ -8,7 +8,7 @@
           large
           router
           to="/meetups"
-          class="indigo lighten-4 text-sm-right mr-5"
+          class="blue lighten-5 text-sm-right mr-5"
         >
           View Meetups
         </v-btn>
@@ -20,7 +20,7 @@
           large
           router
           to="/meetup/new"
-          class="indigo lighten-4 text-sm-left"
+          class="blue lighten-5 text-sm-left"
         >
           Organize Meetup
         </v-btn>
@@ -39,6 +39,13 @@
             <div class="title">{{ item.title }}</div>
           </v-carousel-item>
         </v-carousel>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap mb-3 mt-3>
+      <v-flex xs12 sm6 class="text-sm-right text-xs-center ml-12">
+        <v-btn xs12 large router to="/meetups" class="blue lighten-5">
+          View Meetups
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -69,5 +76,10 @@ export default {
 
 <style scoped>
 .title {
+  position: absolute;
+  bottom: 50px;
+  left: 40%;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 50px;
 }
 </style>
