@@ -35,6 +35,7 @@
             :src="item.imageUrl"
             reverse-transition="fade-transition"
             transition="fade-transition"
+            @click="onLoadMeetup(item.id)"
           >
             <div class="title">{{ item.title }}</div>
           </v-carousel-item>
@@ -53,23 +54,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      meetup: [
-        {
-          imageUrl:
-            "https://static.amazon.jobs/locations/58/images/NYC.jpg?1547618121",
-          id: 1,
-          title: "meetups in new york",
-        },
-        {
-          imageUrl:
-            "https://media.gettyimages.com/photos/aerial-view-of-lower-manhattan-new-york-picture-id946087016?k=6&m=946087016&s=612x612&w=0&h=FPq454ti8ZKPiMzyDPJ_A4BNQaN-2olcfg4TYgMFR1w=",
-          id: 2,
-          title: "meetups in Paris",
-        },
-      ],
-    };
+  methods: {
+    onLoadMeetup: function (id) {
+      this.$router.push("/meetups/" + id);
+    },
+  },
+  computed: {
+    meetup() {
+      return this.$store.getters.featuredMeetups;
+    },
   },
 };
 </script>

@@ -11,6 +11,14 @@
           </v-list-item-action>
         </v-list-item>
       </v-list>
+      <v-list-item v-on:click="onLogout" v-show="isUserAuthenticated">
+        <v-list-item-action>
+          <v-btn text>
+            <v-icon left>logout</v-icon>
+            LogOut
+          </v-btn>
+        </v-list-item-action>
+      </v-list-item>
     </v-navigation-drawer>
     <v-app-bar app class="blue lighten-5">
       <v-app-bar-nav-icon
@@ -29,6 +37,12 @@
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn text v-on:click="onLogout" v-show="isUserAuthenticated">
+          <v-icon left>logout</v-icon>
+          LogOut
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
     <v-main>
       <router-view></router-view>
@@ -42,16 +56,34 @@ export default {
   data() {
     return {
       drawer: false,
-      menuItems: [
-        { icon: "group", title: "View Meetups", link: "/meetups" },
-        { icon: "room", title: "Organize Meetup", link: "/meetup/new" },
-        { icon: "person", title: "Profile", link: "/profile" },
-        { icon: "face", title: "Sign Up", link: "/signup" },
-        { icon: "lock_open", title: "Sign In", link: "/signin" },
-      ],
     };
   },
-
-  components: {},
+  computed: {
+    menuItems() {
+      let menuItem = [
+        { icon: "face", title: "Sign Up", link: "/signup" },
+        { icon: "lock_open", title: "Sign In", link: "/signin" },
+      ];
+      if (this.isUserAuthenticated) {
+        menuItem = [
+          { icon: "group", title: "View Meetups", link: "/meetups" },
+          { icon: "room", title: "Organize Meetup", link: "/meetup/new" },
+          { icon: "person", title: "Profile", link: "/profile" },
+        ];
+      }
+      return menuItem;
+    },
+    isUserAuthenticated() {
+      return (
+        (this.$store.getters.validateUser !== null) &
+        (this.$store.getters.validateUser !== undefined)
+      );
+    },
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch("logout");
+    },
+  },
 };
 </script>
